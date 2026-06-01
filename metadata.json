@@ -1,0 +1,6 @@
+{
+  "name": "Ocean Deep Go",
+  "description": "An interactive multi-level ocean adventure game featuring memory challenges, a strategic turtle board game, a rapid squid rescue, and an intense underwater nuclear survival arena.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
