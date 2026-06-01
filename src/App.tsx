@@ -78,6 +78,11 @@ export default function App() {
     };
   }, [muted]);
 
+  // Keep sound system background music in sync with active level
+  useEffect(() => {
+    audio.setLevel(screen);
+  }, [screen]);
+
   // Load persistence configurations
   useEffect(() => {
     const savedScore = localStorage.getItem('ocean_deep_go_score');
