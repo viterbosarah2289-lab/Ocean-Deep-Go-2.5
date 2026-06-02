@@ -16,6 +16,11 @@ import { Level4Bloop } from './components/Level4Bloop';
 import { CodexAndGuide } from './components/CodexAndGuide';
 import { audio } from './utils/audio';
 
+import taniImg from './assets/images/tani_avatar_1780381573382.png';
+import noamImg from './assets/images/noam_avatar_1780381519918.png';
+import elyasImg from './assets/images/elyas_avatar_1780381537513.png';
+import dheerImg from './assets/images/dheer_avatar_1780381555412.png';
+
 type ScreenState = 'menu' | 'level1' | 'level2' | 'level3' | 'level4' | 'campaign_victory';
 
 interface TrophyState {
@@ -395,8 +400,13 @@ export default function App() {
                   </div>
                   
                   {/* Portrait of Tani */}
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-purple-500 to-indigo-600 border-2 border-purple-300 mx-auto my-4 flex items-center justify-center relative overflow-hidden group-hover:scale-105 transition-transform">
-                    <span className="text-5xl select-none">👩🏽‍🔧</span>
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-purple-950 to-indigo-950 border-2 border-purple-400 mx-auto my-4 flex items-center justify-center relative overflow-hidden group-hover:scale-105 transition-transform">
+                    <img 
+                      src={taniImg} 
+                      alt="Tani" 
+                      className="w-full h-full object-cover" 
+                      referrerPolicy="no-referrer"
+                    />
                     <div className="absolute inset-0 bg-purple-500/10 pointer-events-none" />
                     {/* Water bubble float inside portrait */}
                     <div className="absolute w-2 h-2 rounded-full bg-white/30 top-3 left-6 animate-pulse" />
@@ -439,11 +449,20 @@ export default function App() {
                   </div>
                   
                   {/* Portrait of Noam */}
-                  <div className={`w-24 h-24 rounded-full bg-gradient-to-tr border-2 mx-auto my-4 flex items-center justify-center relative overflow-hidden transition-transform ${
-                    isLvl2Unlocked ? 'from-cyan-500 to-blue-600 border-cyan-300 group-hover:scale-105' : 'from-slate-850 to-slate-900 border-slate-700'
+                  <div className={`w-24 h-24 rounded-full bg-[#0c4a6e]/50 border-2 mx-auto my-4 flex items-center justify-center relative overflow-hidden transition-transform ${
+                    isLvl2Unlocked ? 'border-cyan-300 group-hover:scale-105' : 'border-slate-700'
                   }`}>
-                    <span className="text-5xl select-none">{isLvl2Unlocked ? '👦🏻' : '🔑'}</span>
-                    <div className="absolute inset-x-0 bottom-0 py-0.5 bg-cyan-950/60 text-cyan-200 text-[8px] font-bold font-mono">BRACES UNLOCKED</div>
+                    {isLvl2Unlocked ? (
+                      <img 
+                        src={noamImg} 
+                        alt="Noam" 
+                        className="w-full h-full object-cover" 
+                        referrerPolicy="no-referrer"
+                      />
+                    ) : (
+                      <span className="text-4xl select-none filter opacity-40">🔐</span>
+                    )}
+                    <div className="absolute inset-x-0 bottom-0 py-0.5 bg-cyan-950/80 text-cyan-100 text-[7px] font-extrabold uppercase font-sans tracking-wide">BRACES SHIELD</div>
                   </div>
 
                   {/* Character Name Capsule */}
@@ -455,7 +474,7 @@ export default function App() {
 
                   <p className={`text-xs mt-3 leading-normal font-sans ${isLvl2Unlocked ? 'text-[#8ecae6] opacity-90' : 'text-slate-500'}`}>
                     {isLvl2Unlocked 
-                      ? 'Turtle Adventure Race! Guide our tactical sea turtle squad to victory.'
+                      ? 'Noam with braces guides our tactical turtle squad racing across coral reefs.'
                       : 'Lock: Clear Level 1 Tani stage to launch Noam\'s race challenge!'
                     }
                   </p>
@@ -492,11 +511,20 @@ export default function App() {
                   </div>
                   
                   {/* Portrait of Elyas */}
-                  <div className={`w-24 h-24 rounded-full bg-gradient-to-tr border-2 mx-auto my-4 flex items-center justify-center relative overflow-hidden transition-transform ${
-                    isLvl3Unlocked ? 'from-emerald-500 to-teal-600 border-emerald-300 group-hover:scale-105' : 'from-slate-850 to-slate-900 border-slate-700'
+                  <div className={`w-24 h-24 rounded-full bg-[#064e3b]/50 border-2 mx-auto my-4 flex items-center justify-center relative overflow-hidden transition-transform ${
+                    isLvl3Unlocked ? 'border-emerald-300 group-hover:scale-105' : 'border-slate-700'
                   }`}>
-                    <span className="text-5xl select-none">{isLvl3Unlocked ? '🧑🏾‍🚀' : '🔑'}</span>
-                    <div className="absolute inset-x-0 bottom-0 py-0.5 bg-emerald-950/60 text-emerald-200 text-[8px] font-bold font-mono">FALCONS SUIT</div>
+                    {isLvl3Unlocked ? (
+                      <img 
+                        src={elyasImg} 
+                        alt="Elyas" 
+                        className="w-full h-full object-cover" 
+                        referrerPolicy="no-referrer"
+                      />
+                    ) : (
+                      <span className="text-4xl select-none filter opacity-40">🔐</span>
+                    )}
+                    <div className="absolute inset-x-0 bottom-0 py-0.5 bg-emerald-950/80 text-emerald-100 text-[7px] font-extrabold uppercase font-sans tracking-wide">NIGERIAN SENTINEL</div>
                   </div>
 
                   {/* Character Name Capsule */}
@@ -508,7 +536,7 @@ export default function App() {
 
                   <p className={`text-xs mt-3 leading-normal font-sans ${isLvl3Unlocked ? 'text-[#8ecae6] opacity-90' : 'text-slate-500'}`}>
                     {isLvl3Unlocked 
-                      ? 'Squid Attack! Rapidly deploy plasma fences to rescue pufferfish in danger.'
+                      ? 'Elyas, our cute Nigerian squid defense protector, safeguards schools of pufferfish!'
                       : 'Lock: Clear Level 2 Noam stage to launch Elyas\' Squid defense!'
                     }
                   </p>
@@ -545,11 +573,20 @@ export default function App() {
                   </div>
                   
                   {/* Portrait of Dheer */}
-                  <div className={`w-24 h-24 rounded-full bg-gradient-to-tr border-2 mx-auto my-4 flex items-center justify-center relative overflow-hidden transition-transform ${
-                    isLvl4Unlocked ? 'from-orange-500 to-red-600 border-orange-350 group-hover:scale-105' : 'from-slate-850 to-slate-900 border-slate-700'
+                  <div className={`w-24 h-24 rounded-full bg-[#7c2d12]/50 border-2 mx-auto my-4 flex items-center justify-center relative overflow-hidden transition-transform ${
+                    isLvl4Unlocked ? 'border-orange-350 group-hover:scale-105' : 'border-slate-700'
                   }`}>
-                    <span className="text-5xl select-none">{isLvl4Unlocked ? '🧑🏼‍👓' : '🔐'}</span>
-                    <div className="absolute inset-x-0 bottom-0 py-0.5 bg-orange-950/60 text-orange-200 text-[8px] font-bold font-mono">COMMANDER</div>
+                    {isLvl4Unlocked ? (
+                      <img 
+                        src={dheerImg} 
+                        alt="Dheer" 
+                        className="w-full h-full object-cover" 
+                        referrerPolicy="no-referrer"
+                      />
+                    ) : (
+                      <span className="text-4xl select-none filter opacity-40">🔐</span>
+                    )}
+                    <div className="absolute inset-x-0 bottom-0 py-0.5 bg-orange-950/80 text-orange-200 text-[7px] font-extrabold uppercase font-sans tracking-wide">INDIAN COMMANDER</div>
                   </div>
 
                   {/* Character Name Capsule */}
@@ -561,7 +598,7 @@ export default function App() {
 
                   <p className={`text-xs mt-3 leading-normal font-sans ${isLvl4Unlocked ? 'text-[#8ecae6] opacity-90' : 'text-slate-500'}`}>
                     {isLvl4Unlocked 
-                      ? 'Survive Deep Bomb! Steer the sub in radioactive core bypass.'
+                      ? 'Dheer, our clever Indian boy wearing glasses, navigates critical underwater cores!'
                       : 'Lock: Clear Level 3 Elyas stage to unlock commander Dheer\'s sub!'
                     }
                   </p>
@@ -878,19 +915,31 @@ export default function App() {
               {/* Level Stats breakdown */}
               <div className="space-y-2 max-h-[180px] overflow-y-auto pr-1">
                 <div className="flex justify-between items-center bg-slate-950/50 p-2.5 rounded-xl border border-purple-500/20">
-                  <span className="font-bold text-purple-400 text-xs flex items-center gap-1">👩🏽‍🔧 Tani's Fish Memory Badge</span>
+                  <span className="font-bold text-purple-400 text-xs flex items-center gap-2">
+                    <img src={taniImg} alt="" className="w-5 h-5 rounded-full object-cover" referrerPolicy="no-referrer" />
+                    Tani's Fish Memory Badge
+                  </span>
                   <span className="text-xs font-bold font-mono text-[#ca8a04]">{levelScores.level1 || 0} PTS</span>
                 </div>
                 <div className="flex justify-between items-center bg-slate-950/50 p-2.5 rounded-xl border border-cyan-500/30">
-                  <span className="font-bold text-cyan-400 text-xs flex items-center gap-1">👦🏻 Noam's Turtle Race Shield</span>
+                  <span className="font-bold text-cyan-400 text-xs flex items-center gap-2">
+                    <img src={noamImg} alt="" className="w-5 h-5 rounded-full object-cover" referrerPolicy="no-referrer" />
+                    Noam's Turtle Race Shield
+                  </span>
                   <span className="text-xs font-bold font-mono text-cyan-400">{levelScores.level2 || 0} PTS</span>
                 </div>
                 <div className="flex justify-between items-center bg-slate-950/50 p-2.5 rounded-xl border border-emerald-500/30">
-                  <span className="font-bold text-emerald-400 text-xs flex items-center gap-1">🧑🏾‍🚀 Elyas' Squid Defense Star</span>
+                  <span className="font-bold text-emerald-400 text-xs flex items-center gap-2">
+                    <img src={elyasImg} alt="" className="w-5 h-5 rounded-full object-cover" referrerPolicy="no-referrer" />
+                    Elyas' Squid Defense Star
+                  </span>
                   <span className="text-xs font-bold font-mono text-emerald-400">{levelScores.level3 || 0} PTS</span>
                 </div>
                 <div className="flex justify-between items-center bg-slate-950/50 p-2.5 rounded-xl border border-orange-500/30">
-                  <span className="font-bold text-orange-400 text-xs flex items-center gap-1">🧑🏼‍👓 Dheer's Bloop Survivor badge</span>
+                  <span className="font-bold text-orange-400 text-xs flex items-center gap-2">
+                    <img src={dheerImg} alt="" className="w-5 h-5 rounded-full object-cover" referrerPolicy="no-referrer" />
+                    Dheer's Bloop Survivor badge
+                  </span>
                   <span className="text-xs font-bold font-mono text-orange-400">{levelScores.level4 || 0} PTS</span>
                 </div>
               </div>

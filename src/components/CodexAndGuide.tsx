@@ -4,6 +4,11 @@ import {
   HelpCircle, Sparkles, X, ChevronRight, CheckCircle2, Lock, Eye, EyeOff
 } from 'lucide-react';
 
+import taniImg from '../assets/images/tani_avatar_1780381573382.png';
+import noamImg from '../assets/images/noam_avatar_1780381519918.png';
+import elyasImg from '../assets/images/elyas_avatar_1780381537513.png';
+import dheerImg from '../assets/images/dheer_avatar_1780381555412.png';
+
 interface CodexAndGuideProps {
   isOpen: boolean;
   onClose: () => void;
@@ -197,7 +202,9 @@ export const CodexAndGuide: React.FC<CodexAndGuideProps> = ({ isOpen, onClose, s
                 
                 {/* Profile: Tani */}
                 <div className="bg-[#001c29] border border-[#005f73]/30 p-4 rounded-xl flex gap-3">
-                  <span className="text-4xl select-none filter drop-shadow-[0_0_8px_rgba(148,210,189,0.3)]">🧑‍🔬</span>
+                  <div className="w-12 h-12 rounded-full border border-purple-500/30 overflow-hidden flex-shrink-0">
+                    <img src={taniImg} alt="Tani" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                  </div>
                   <div>
                     <div className="flex items-center gap-1.5">
                       <h4 className="text-white font-bold uppercase tracking-tight">Tani</h4>
@@ -212,22 +219,26 @@ export const CodexAndGuide: React.FC<CodexAndGuideProps> = ({ isOpen, onClose, s
 
                 {/* Profile: Noam */}
                 <div className="bg-[#001c29] border border-[#005f73]/30 p-4 rounded-xl flex gap-3">
-                  <span className="text-4xl select-none filter drop-shadow-[0_0_8px_rgba(148,210,189,0.3)]">🐢</span>
+                  <div className="w-12 h-12 rounded-full border border-cyan-500/30 overflow-hidden flex-shrink-0">
+                    <img src={noamImg} alt="Noam" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                  </div>
                   <div>
                     <div className="flex items-center gap-1.5">
-                      <h4 className="text-white font-bold uppercase tracking-tight">Noam the Turtle</h4>
+                      <h4 className="text-white font-bold uppercase tracking-tight">Noam</h4>
                       <span className="text-[8px] px-1.5 py-0.5 bg-[#0a9396] text-[#001219] rounded font-mono">NAVIGATOR</span>
                     </div>
                     <span className="text-[10px] text-[#94d2bd] block font-mono">"Patience outruns the storm."</span>
                     <p className="text-[11px] text-slate-400 mt-2 leading-relaxed">
-                      A hundred-year-old wise leatherback sea turtle. His maps are notched in his shell, guiding small turtle groups through reef currents, avoiding malicious vortexes, and collecting golden kelp shells.
+                      A curly-haired boy wearing metal braces. He functions as our brilliant tactical navigator who coordinates leatherback sea turtle squads through tricky coral reef routes.
                     </p>
                   </div>
                 </div>
 
                 {/* Profile: Elyas */}
                 <div className="bg-[#001c29] border border-[#005f73]/30 p-4 rounded-xl flex gap-3">
-                  <span className="text-4xl select-none filter drop-shadow-[0_0_8px_rgba(238,155,0,0.3)]">🛡️</span>
+                  <div className="w-12 h-12 rounded-full border border-emerald-500/30 overflow-hidden flex-shrink-0">
+                    <img src={elyasImg} alt="Elyas" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                  </div>
                   <div>
                     <div className="flex items-center gap-1.5">
                       <h4 className="text-white font-bold uppercase tracking-tight">Elyas</h4>
@@ -235,14 +246,16 @@ export const CodexAndGuide: React.FC<CodexAndGuideProps> = ({ isOpen, onClose, s
                     </div>
                     <span className="text-[10px] text-[#ee9b00] block font-mono">"No fish left behind."</span>
                     <p className="text-[11px] text-slate-400 mt-2 leading-relaxed">
-                      A high-speed marine conservation sentinel patrol pilot. Armed with quick reflexes, his mission is to shield vulnerable marine schools from ancient ravenous krackens that scour the abyssal vents.
+                      A cute Nigerian kid designed with advanced sea sentinel gear, serving as a quick-thinking defender who shields vulnerable pufferfish groups from abyssal squid laser barriers.
                     </p>
                   </div>
                 </div>
 
                 {/* Profile: Dheer */}
                 <div className="bg-[#001c29] border border-[#005f73]/30 p-4 rounded-xl flex gap-3">
-                  <span className="text-4xl select-none filter drop-shadow-[0_0_8px_rgba(239,68,68,0.3)]">👨‍✈️</span>
+                  <div className="w-12 h-12 rounded-full border border-orange-500/30 overflow-hidden flex-shrink-0">
+                    <img src={dheerImg} alt="Dheer" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                  </div>
                   <div>
                     <div className="flex items-center gap-1.5">
                       <h4 className="text-white font-bold uppercase tracking-tight">Dheer</h4>
@@ -250,7 +263,7 @@ export const CodexAndGuide: React.FC<CodexAndGuideProps> = ({ isOpen, onClose, s
                     </div>
                     <span className="text-[10px] text-[#ae2012] block font-mono">"Pilot with iron conviction."</span>
                     <p className="text-[11px] text-slate-400 mt-2 leading-relaxed">
-                      A veteran deep-water submersible commander who has spent his life chart-mapping the deepest, darkest cracks of the Mariana obsidian trenches. Fearless under pressure.
+                      A clever Indian boy wearing glasses. He pilots the research submarine with iron conviction, dodging abyssal bombs and unstable nuclear core hazards.
                     </p>
                   </div>
                 </div>
